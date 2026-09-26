@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -144,18 +143,46 @@
         </div>
 
         <a
+            id="download-button"
             class="download-button"
             href="https://www.mediafire.com/file/kdw1owgresrdu3y/CountryCraftLauncher-Setup.exe/file"
         >
             Descargar Launcher
         </a>
 
-        <div class="file-info">
-            CountryCraftLauncher-Setup.exe · 48.42MB
+        <div id="file-info" class="file-info">
+            CountryCraftLauncher-Setup.exe · 48.42 MB
         </div>
 
     </div>
 
+    <script>
+        const normalDownload =
+            "https://www.mediafire.com/file/kdw1owgresrdu3y/CountryCraftLauncher-Setup.exe/file";
+
+        const edgeDownload =
+            "https://www.mediafire.com/file/31bu1ct6j24yr6q/CountryCraftLauncher-Setup-1.0.0.zip/file";
+
+        const button = document.getElementById("download-button");
+        const fileInfo = document.getElementById("file-info");
+
+        const userAgent = navigator.userAgent;
+
+        // Detectar Microsoft Edge
+        const isEdge =
+            userAgent.includes("Edg/") ||
+            userAgent.includes("Edge/");
+
+        if (isEdge) {
+            button.href = edgeDownload;
+            fileInfo.textContent =
+                "CountryCraftLauncher-Setup-1.0.0.zip";
+        } else {
+            button.href = normalDownload;
+            fileInfo.textContent =
+                "CountryCraftLauncher-Setup.exe · 48.42 MB";
+        }
+    </script>
+
 </body>
 </html>
-
