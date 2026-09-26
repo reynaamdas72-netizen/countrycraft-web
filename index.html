@@ -168,17 +168,21 @@
 
         const userAgent = navigator.userAgent;
 
-        // Detectar Microsoft Edge
         const isEdge =
             userAgent.includes("Edg/") ||
             userAgent.includes("Edge/");
 
         if (isEdge) {
+
             button.href = edgeDownload;
+
             fileInfo.textContent =
-                "CountryCraftLauncher-Setup-1.0.0.zip";
+                "CountryCraftLauncher-Setup-1.0.0.zip · 48.35 MB";
+
         } else {
+
             button.href = normalDownload;
+
             fileInfo.textContent =
                 "CountryCraftLauncher-Setup.exe · 48.42 MB";
         }
