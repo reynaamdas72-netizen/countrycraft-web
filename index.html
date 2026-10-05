@@ -139,29 +139,31 @@
         <h1>CountryCraft Launcher</h1>
 
         <div class="description">
-            Descarga el launcher oficial de CountryCraft.
+            Descarga el launcher oficial de CountryCraft.<br><span style="opacity:.7;font-size:.9em">La app se actualiza sola: cuando hay una versi&oacute;n nueva, la descarga al abrirse.</span>
         </div>
 
         <a
             id="download-button"
             class="download-button"
-            href="https://www.mediafire.com/file/kdw1owgresrdu3y/CountryCraftLauncher-Setup.exe/file"
+            href="descargas/CountryCraftLauncher-Setup.exe"
         >
             Descargar Launcher
         </a>
 
         <div id="file-info" class="file-info">
-            CountryCraftLauncher-Setup.exe · 48.42 MB
+            CountryCraftLauncher-Setup.exe · 48.4 MB
         </div>
 
     </div>
 
     <script>
-        const normalDownload =
-            "https://www.mediafire.com/file/kdw1owgresrdu3y/CountryCraftLauncher-Setup.exe/file";
+        // Archivos publicados en esta misma pagina (/descargas/), asi el launcher
+        // siempre esta al dia. El ZIP es para Edge: Defender bloquea la descarga del
+        // .exe suelto, pero deja pasar el ZIP; al descomprimir, el .exe no queda
+        // marcado como descargado de internet y no aparece el aviso de SmartScreen.
+        const normalDownload = "descargas/CountryCraftLauncher-Setup.exe";
 
-        const edgeDownload =
-            "https://www.mediafire.com/file/31bu1ct6j24yr6q/CountryCraftLauncher-Setup-1.0.0.zip/file";
+        const edgeDownload = "descargas/CountryCraftLauncher-Setup-1.0.1.zip";
 
         const button = document.getElementById("download-button");
         const fileInfo = document.getElementById("file-info");
@@ -177,14 +179,14 @@
             button.href = edgeDownload;
 
             fileInfo.textContent =
-                "CountryCraftLauncher-Setup-1.0.0.zip · 48.35 MB";
+                "CountryCraftLauncher-Setup-1.0.1.zip · 48.4 MB";
 
         } else {
 
             button.href = normalDownload;
 
             fileInfo.textContent =
-                "CountryCraftLauncher-Setup.exe · 48.42 MB";
+                "CountryCraftLauncher-Setup.exe · 48.4 MB";
         }
     </script>
 
