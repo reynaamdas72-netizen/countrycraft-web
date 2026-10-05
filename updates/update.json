@@ -1,0 +1,14 @@
+{
+  "version": "1.0.1",
+  "note": "Tutorial paso a paso al entrar al servidor (abrir el chat, escribir /rtp, apretar Enter, tallar un tronco, abrir el inventario): cada aviso aparece solo cuando el alumno hizo lo anterior y se reemplaza los avisos de Minecraft. Se muestran por alumno: si en la misma compu entra otro, los ve de nuevo. El portal y el NPC del servidor saltan los pasos del /rtp. Se arregla la conexión al servidor. Barra de progreso del launcher arreglada en Windows. El launcher recuerda el nombre del alumno.",
+  "windows": {
+    "url": "https://launcher.countrycraft.lat/updates/countrycraft-1.0.1-windows.zip",
+    "sha256": "b43391464c9bbd55e101ce4c889ac132b4ff9ff4bfad10f3cea967000511a1a8",
+    "size": 21055711
+  },
+  "linux": {
+    "url": "https://launcher.countrycraft.lat/updates/countrycraft-1.0.1-linux.zip",
+    "sha256": "92f7a29b537ff80149e2fff6ee84038f91a10b0e6ff7e80fa90c75e3cd4ac902",
+    "size": 20931511
+  }
+}
