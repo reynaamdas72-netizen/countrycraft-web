@@ -154,7 +154,7 @@
         <a
             id="download-button"
             class="download-button"
-            href="descargas/CountryCraftLauncher-Setup.exe"
+            href="https://www.mediafire.com/file/izxc80yxs85dhm5/CountryCraftLauncher-Setup.exe/file"
         >
             Descargar Launcher
         </a>
@@ -166,13 +166,14 @@
     </div>
 
     <script>
-        // Los archivos se sirven desde esta misma pagina (carpeta /descargas/).
-        // Si el alumno usa Edge, baja el ZIP: Edge/Defender bloquea la descarga del
-        // .exe suelto, pero deja pasar el ZIP; y al descomprimirlo el .exe no queda
-        // marcado como descargado de internet, asi que no aparece el aviso de Windows.
-        const normalDownload = "descargas/CountryCraftLauncher-Setup.exe";
+        // El instalador se baja de MediaFire (los archivos son grandes y GitHub no
+        // los acepta). Si el alumno usa Edge, baja el ZIP: Edge/Defender bloquea la
+        // descarga del .exe suelto, pero deja pasar el ZIP; y al descomprimirlo el
+        // .exe no queda marcado como descargado de internet, asi que no aparece el
+        // aviso de Windows.
+        const normalDownload = "https://www.mediafire.com/file/izxc80yxs85dhm5/CountryCraftLauncher-Setup.exe/file";
 
-        const edgeDownload = "descargas/CountryCraftLauncher-Setup-1.0.1.zip";
+        const edgeDownload = "https://www.mediafire.com/file/2ixo5b8r8uvfdov/CountryCraftLauncher-Setup-1.0.1.zip/file";
 
         const button = document.getElementById("download-button");
         const fileInfo = document.getElementById("file-info");
