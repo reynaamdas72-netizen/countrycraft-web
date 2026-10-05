@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CountryCraft -- Launcher</title>
+    <title>CountryCraft Launcher</title>
+    <meta name="description" content="Launcher escolar de CountryCraft: Minecraft 1.21.11 con Fabric y mods de optimizacion para entrar al servidor del colegio.">
 
-    <!-- Discord / Open Graph -->
+    <!-- Datos para cuando se comparte el link en Discord / WhatsApp / Twitter -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="CountryCraft -- Launcher">
-    <meta property="og:description" content="Un launcher para jugar CountryCraft y optimizado">
-    <meta property="og:image" content="https://reynaamdas72-netizen.github.io/countrycraft-web/logo.png">
-    <meta property="og:url" content="https://reynaamdas72-netizen.github.io/countrycraft-web/">
+    <meta property="og:site_name" content="CountryCraft">
+    <meta property="og:title" content="CountryCraft Launcher">
+    <meta property="og:description" content="Launcher escolar de CountryCraft: Minecraft 1.21.11 con Fabric y mods de optimizacion para entrar al servidor del colegio.">
+    <meta property="og:url" content="https://launcher.countrycraft.lat/">
+    <meta property="og:image" content="https://launcher.countrycraft.lat/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CountryCraft Launcher">
+    <meta name="twitter:description" content="Launcher escolar de CountryCraft: Minecraft 1.21.11 con Fabric y mods de optimizacion para entrar al servidor del colegio.">
+    <meta name="twitter:image" content="https://launcher.countrycraft.lat/og-image.png">
 
-    <!-- Otras plataformas -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="CountryCraft -- Launcher">
-    <meta name="twitter:description" content="Un launcher para jugar CountryCraft y optimizado">
-    <meta name="twitter:image" content="https://reynaamdas72-netizen.github.io/countrycraft-web/logo.png">
+    <!-- Icono de la pestana: el logo -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
 
     <style>
         * {
@@ -70,27 +76,12 @@
         }
 
         .logo {
-            width: 85px;
-            height: 85px;
+            width: 118px;
+            height: 118px;
 
             margin: 0 auto 24px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 20px;
-
-            background: rgba(25, 200, 90, 0.15);
-            border: 1px solid rgba(40, 220, 110, 0.35);
-
-            overflow: hidden;
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            display: block;
         }
 
         h1 {
@@ -151,18 +142,12 @@
 
     <div class="download-box">
 
-        <div class="logo">
-            <img src="logo.png" alt="CountryCraft">
-        </div>
+        <img class="logo" src="logo.png" width="118" height="118" alt="CountryCraft">
 
-        <h1>CountryCraft -- Launcher</h1>
+        <h1>CountryCraft Launcher</h1>
 
         <div class="description">
-            Un launcher para jugar CountryCraft y optimizado.<br>
-            <span style="opacity:.7;font-size:.9em">
-                La app se actualiza sola: cuando hay una versión nueva,
-                la descarga al abrirse.
-            </span>
+            Descarga el launcher oficial de CountryCraft.
         </div>
 
         <a
@@ -180,11 +165,10 @@
     </div>
 
     <script>
-        // Archivos publicados en esta misma pagina (/descargas/), asi el launcher
-        // siempre esta al dia. El ZIP es para Edge: Defender bloquea la descarga del
-        // .exe suelto, pero deja pasar el ZIP; al descomprimir, el .exe no queda
-        // marcado como descargado de internet y no aparece el aviso de SmartScreen.
-
+        // Los archivos se sirven desde esta misma pagina (carpeta /descargas/).
+        // Si el alumno usa Edge, baja el ZIP: Edge/Defender bloquea la descarga del
+        // .exe suelto, pero deja pasar el ZIP; y al descomprimirlo el .exe no queda
+        // marcado como descargado de internet, asi que no aparece el aviso de Windows.
         const normalDownload = "descargas/CountryCraftLauncher-Setup.exe";
 
         const edgeDownload = "descargas/CountryCraftLauncher-Setup-1.0.1.zip";
@@ -199,18 +183,11 @@
             userAgent.includes("Edge/");
 
         if (isEdge) {
-
             button.href = edgeDownload;
-
-            fileInfo.textContent =
-                "CountryCraftLauncher-Setup-1.0.1.zip · 48.4 MB";
-
+            fileInfo.textContent = "CountryCraftLauncher-Setup-1.0.1.zip · 48.4 MB";
         } else {
-
             button.href = normalDownload;
-
-            fileInfo.textContent =
-                "CountryCraftLauncher-Setup.exe · 48.4 MB";
+            fileInfo.textContent = "CountryCraftLauncher-Setup.exe · 48.4 MB";
         }
     </script>
 
