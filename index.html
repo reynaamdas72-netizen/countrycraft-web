@@ -43,8 +43,12 @@
             min-height: 100vh;
 
             display: flex;
-            align-items: center;
             justify-content: center;
+
+            /* Con margin:auto en la caja (en vez de align-items:center) el bloque
+               se centra si sobra alto, pero si NO cabe se scrollea entero desde
+               arriba en vez de quedar recortado por los dos lados. */
+            padding: 20px 14px;
 
             font-family: Arial, Helvetica, sans-serif;
 
@@ -60,15 +64,16 @@
         }
 
         .download-box {
-            width: 90%;
-            max-width: 470px;
-            padding: 42px;
+            width: 100%;
+            max-width: 540px;
+            margin: auto;
+            padding: 26px 24px 22px;
 
             text-align: center;
 
             background: rgba(0, 0, 0, 0.40);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 22px;
+            border-radius: 18px;
 
             box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
 
@@ -77,41 +82,41 @@
         }
 
         .logo {
-            width: 118px;
-            height: 118px;
+            width: 76px;
+            height: 76px;
 
-            margin: 0 auto 24px;
+            margin: 0 auto 14px;
 
             display: block;
         }
 
         h1 {
-            margin-bottom: 10px;
-            font-size: 29px;
+            margin-bottom: 6px;
+            font-size: 25px;
             font-weight: 700;
         }
 
         .description {
-            margin-bottom: 28px;
+            margin-bottom: 18px;
 
             color: rgba(255, 255, 255, 0.65);
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .download-button {
             display: block;
             width: 100%;
 
-            padding: 16px 20px;
+            padding: 13px 20px;
 
-            border-radius: 12px;
+            border-radius: 11px;
 
             background: #20c965;
             color: white;
 
             text-decoration: none;
 
-            font-size: 17px;
+            font-size: 16px;
             font-weight: bold;
 
             transition:
@@ -131,8 +136,8 @@
         }
 
         .steps {
-            margin-top: 22px;
-            padding-top: 18px;
+            margin-top: 16px;
+            padding-top: 14px;
 
             border-top: 1px solid rgba(255, 255, 255, 0.10);
 
@@ -141,19 +146,19 @@
 
         .step {
             display: flex;
-            gap: 10px;
+            gap: 9px;
             align-items: flex-start;
 
-            margin-bottom: 10px;
+            margin-bottom: 8px;
 
             color: rgba(255, 255, 255, 0.72);
-            font-size: 13.5px;
-            line-height: 1.45;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
         .step .n {
-            flex: 0 0 22px;
-            height: 22px;
+            flex: 0 0 20px;
+            height: 20px;
 
             border-radius: 50%;
 
@@ -162,7 +167,7 @@
 
             color: #7ff0ad;
 
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
 
             display: flex;
@@ -171,18 +176,18 @@
         }
 
         .note {
-            margin-top: 14px;
+            margin-top: 11px;
 
             color: rgba(255, 255, 255, 0.42);
-            font-size: 12px;
-            line-height: 1.5;
+            font-size: 11.5px;
+            line-height: 1.45;
         }
 
         .file-info {
-            margin-top: 18px;
+            margin-top: 12px;
 
             color: rgba(255, 255, 255, 0.4);
-            font-size: 12px;
+            font-size: 11.5px;
         }
     </style>
 </head>
@@ -191,7 +196,7 @@
 
     <div class="download-box">
 
-        <img class="logo" src="favicon-2.png" width="118" height="118" alt="CountryCraft">
+        <img class="logo" src="favicon-2.png" width="76" height="76" alt="CountryCraft">
 
         <h1>CountryCraft Launcher</h1>
 
@@ -211,7 +216,7 @@
             CountryCraftLauncher-Setup-1.0.1.zip · 48.4 MB
         </div>
 
-        <div class="file-info" style="margin-top:10px">
+        <div class="file-info" style="margin-top:4px">
             Bajar el .zip y descomprimirlo.
         </div>
 
