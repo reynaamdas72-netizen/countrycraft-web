@@ -130,6 +130,54 @@
             transform: translateY(0);
         }
 
+        .steps {
+            margin-top: 22px;
+            padding-top: 18px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+            text-align: left;
+        }
+
+        .step {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+
+            margin-bottom: 10px;
+
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 13.5px;
+            line-height: 1.45;
+        }
+
+        .step .n {
+            flex: 0 0 22px;
+            height: 22px;
+
+            border-radius: 50%;
+
+            background: rgba(32, 201, 101, 0.18);
+            border: 1px solid rgba(32, 201, 101, 0.45);
+
+            color: #7ff0ad;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .note {
+            margin-top: 14px;
+
+            color: rgba(255, 255, 255, 0.42);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
         .file-info {
             margin-top: 18px;
 
@@ -154,43 +202,57 @@
         <a
             id="download-button"
             class="download-button"
-            href="https://www.mediafire.com/file/izxc80yxs85dhm5/CountryCraftLauncher-Setup.exe/file"
+            href="https://www.mediafire.com/file/zctgr1wm9z0uyp8/CountryCraftLauncher-Setup-1.0.1.zip/file"
         >
             Descargar Launcher
         </a>
 
         <div id="file-info" class="file-info">
-            CountryCraftLauncher-Setup.exe · 48.4 MB
+            CountryCraftLauncher-Setup-1.0.1.zip · 48.4 MB
+        </div>
+
+        <div class="file-info" style="margin-top:10px">
+            Bajar el .zip y descomprimirlo.
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <span class="n">1</span>
+                <span>Clic derecho en <b>CountryCraftLauncher-Setup.exe</b> &rarr;
+                <b>Propiedades</b> &rarr; abajo tild&aacute; <b>Desbloquear</b> &rarr; <b>Aplicar</b>.</span>
+            </div>
+            <div class="step">
+                <span class="n">2</span>
+                <span>Doble clic en el instalador y segu&iacute; los pasos.</span>
+            </div>
+            <div class="note">
+                Si Windows dice &laquo;Windows protegió tu PC&raquo;, no es un virus: es porque el
+                programa no tiene firma digital. Volvé a hacer el paso 1, o us&aacute;
+                <b>Ejecutar de todas formas</b>.
+            </div>
         </div>
 
     </div>
 
     <script>
-        // El instalador se baja de MediaFire (los archivos son grandes y GitHub no
-        // los acepta). Si el alumno usa Edge, baja el ZIP: Edge/Defender bloquea la
-        // descarga del .exe suelto, pero deja pasar el ZIP; y al descomprimirlo el
-        // .exe no queda marcado como descargado de internet, asi que no aparece el
-        // aviso de Windows.
-        const normalDownload = "https://www.mediafire.com/file/izxc80yxs85dhm5/CountryCraftLauncher-Setup.exe/file";
-
-        const edgeDownload = "https://www.mediafire.com/file/2ixo5b8r8uvfdov/CountryCraftLauncher-Setup-1.0.1.zip/file";
+        // Un unico archivo para todos: el ZIP.
+        //
+        // Antes el boton daba el .exe y Chrome lo bloqueaba al descargar. Con el ZIP
+        // Chrome y Edge no avisan al bajar. Ojo: descomprimir NO alcanza por si solo
+        // (Windows 10/11 hereda la marca de "descargado de internet" a lo que se
+        // extrae), asi que el paso 1 de la pagina (Propiedades -> Desbloquear) es
+        // el que evita el aviso de SmartScreen. Ver FIRMAR-INSTALADOR.md.
+        const downloadUrl = "https://www.mediafire.com/file/zctgr1wm9z0uyp8/CountryCraftLauncher-Setup-1.0.1.zip/file";
 
         const button = document.getElementById("download-button");
-        const fileInfo = document.getElementById("file-info");
 
-        const userAgent = navigator.userAgent;
-
-        const isEdge =
-            userAgent.includes("Edg/") ||
-            userAgent.includes("Edge/");
-
-        if (isEdge) {
-            button.href = edgeDownload;
-            fileInfo.textContent = "CountryCraftLauncher-Setup-1.0.1.zip · 48.4 MB";
-        } else {
-            button.href = normalDownload;
-            fileInfo.textContent = "CountryCraftLauncher-Setup.exe · 48.4 MB";
-        }
+        button.addEventListener("click", function (event) {
+            if (downloadUrl.indexOf("__") === 0) {
+                event.preventDefault();
+                alert("Falta poner el link de descarga. Avisale a quien administra la pagina.");
+                return;
+            }
+        });
     </script>
 
 </body>
